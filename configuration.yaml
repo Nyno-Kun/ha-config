@@ -126,7 +126,7 @@ sensor:
     display_id: CHF
 
   - platform: twitch
-    client_id: yuilz2a33fhr9r4mm9e9ypo0be1rnk
+    client_id: !secret twitch_client_id
     channels:
     - kotton
 
