@@ -1,0 +1,29 @@
+alias: "someone_at_home"
+trigger:
+  platform: state
+  entity_id:
+    - device_tracker.nynohandy
+    - device_tracker.linushandy
+    - device_tracker.flaviohandy 
+  from: 'not_home'
+  to: 'home'
+condition:
+  - condition: state
+    entity_id: sun.sun
+    state: bellow_horizon 
+action:
+  - service: light.turn_on
+    entity_id: light.eingang_hue
+  - service: light.lifx_effect_pulse
+    data:
+      entity_id: light.lifx_status
+      color_name: navy
+      brightness: 191
+      period: 1
+      cycles: 3
+  - delay:
+      secconds: 30
+  - service: light.turn_off
+    entity_id: light.eingang_hue
+
+

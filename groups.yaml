@@ -1,0 +1,90 @@
+datum:
+   view: no
+   name: Datum
+   entities:
+     - sensor.time
+     - sensor.date
+     - sun.sun
+     - sensor.moon
+
+temperature_darksky:
+    view: no
+    name: "Wetter Heute"
+    entities:
+      - sensor.dark_sky_summary
+      - sensor.dark_sky_temperature
+      - sensor.dark_sky_daily_low_temperature
+      - sensor.dark_sky_daily_high_temperature
+      - sensor.dark_sky_wind_speed
+      - sensor.dark_sky_nearest_storm_distance
+
+speedtest:
+   view: no
+   name: Internet-Speed
+   entities:
+      - sensor.update_speedtest
+      - sensor.speedtest_download
+      - sensor.speedtest_upload
+      - sensor.speedtest_ping
+
+tram:
+  view: no
+  name: BLT
+  entities:
+      - sensor.next_departure
+
+crypto:
+  view: no
+  name: CryptoMoney
+  entities:
+      - sensor.bitcoin
+      - sensor.ethereum
+media:
+  view: no
+  name: Media
+  entities:
+      - media_player.samsung_tv_remote
+      - media_player.wohnzimmer
+
+#Pannels
+default_view:
+  view: yes
+  icon: mdi:home
+  entities:
+    - group.all_devices
+    - group.datum
+    - group.temperature_darksky
+    - group.media
+    - group.speedtest
+    - device_tracker.nynohandy
+    - device_tracker.linushandy
+    - device_tracker.flaviohandy
+    - binary_sensor.iss
+    - group.tram
+    - group.infolinks
+    - group.crypto
+
+infolinks:
+  name: Links
+  control: hidden
+  entities:
+    - weblink.unifi
+    - weblink.nextcloud
+
+lichter:
+  view: yes
+  icon: mdi:lightbulb
+  entities:
+    - group.all_lights
+    - light.eingang_hue
+    - light.hotbox_hue
+    - light.linus_hue
+    - light.lifx_status
+    - light.hue_lightstrip_plus_1
+    - light.nanoleafaurora516882local
+
+gadgets:
+  view: yes
+  icon: mdi:death-star-variant
+  entities:
+    - sensor.kotton 
